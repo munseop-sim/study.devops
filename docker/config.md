@@ -15,7 +15,7 @@
         - `sudo apt-get update && sudo apt-get install -y ubuntu-desktop-minimal`
 - ubuntu 네트워크 설정
     - 2개의 네트워크가 있을텐데.. 거기서 192.168.56.xxx로 설정된 부분을 변경
-      ![img.png](md_resource/network_change.png)
+      ![img.png](../md_resource/network_change.png)
     - 변경후에 ssh 접속
 - 프로그램 설치
     - filezila 설치
