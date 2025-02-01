@@ -37,3 +37,15 @@
 - `--net=container:[container name | id]`: 다른 컨테이너의 네트워크를 사용
 - `--net=host`: 컨테이너가 호스트OS의 네트워크를 사용
 - `--net=[사용자정의 네트워크 name]`: 사용자 정의 네트워크 사용
+
+### docker DNS
+- Docker 컨테이너는 IP를 사용자 정의 네트워크의 컨테이너 이름으로 자동확인하는 DNS서버가 Docker호스트에 생성된다.
+- 동일 네트워크 alias할당을 통해 하나의 타켓그룹을 만들어 요청에 `RoundRobin`방식으로 응답한다.
+- 컨테이너 생성 시 호스트 시스템에서 다음의 3개의 파일을 복사하여 컨테이너 내부에 작어용하여 컨테이너간의 이름으로 찾기가 가능해진다.
+  - /etc/hostname
+  - /etc/hosts
+  - /etc/resolv.conf
+- 컨테이너 내부에서 동일 네트워크의 다른 컨테이너명으로 ping을 수행하는 과정
+  ![img.png](../md_resource/docker_network_dns.png)
+- 도커DNS을 활용하면 docker proxy(Load Balancing)이 가능하다.
+
